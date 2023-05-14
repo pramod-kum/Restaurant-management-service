@@ -20,7 +20,8 @@ public class Restaurant {
     private Long restaurantID;
     private String restaurantName;
     private String restaurantAddress;
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "restaurant")
     private List<Foods> foods;
+
 
 }

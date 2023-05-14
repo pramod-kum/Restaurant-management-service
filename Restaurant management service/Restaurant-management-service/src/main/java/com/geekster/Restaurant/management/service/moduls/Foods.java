@@ -20,6 +20,6 @@ public class Foods {
     private String foodsName;
     private Double price;
 
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.ALL)
     Restaurant restaurant;
 }

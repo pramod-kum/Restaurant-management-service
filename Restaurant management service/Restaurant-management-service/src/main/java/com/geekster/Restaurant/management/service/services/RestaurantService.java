@@ -19,8 +19,16 @@ public class RestaurantService {
 
     public String addRestaurant(Restaurant restaurant) {
 
-      iRestaurantRepository.save(restaurant);
 
+        List<Foods> foodList =restaurant.getFoods();
+        for(Foods foodObj : foodList){
+            foodObj.setRestaurant(restaurant);
+        }
+        iRestaurantRepository.save(restaurant);
         return "Restuarent added Successfully!!";
+    }
+
+    public Iterable<Restaurant> getAllRestaurant() {
+        return iRestaurantRepository.findAll();
     }
 }

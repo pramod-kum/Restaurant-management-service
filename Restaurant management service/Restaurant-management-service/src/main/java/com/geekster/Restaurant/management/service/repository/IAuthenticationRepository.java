@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface IAuthenticationRepository extends JpaRepository<Authentication , Long> {
     Authentication findByCostumber(Costumber costumberObj);
 
-    Object findFirstByAuthenticationToken(String token);
+    Authentication findFirstByAuthenticationToken(String token);
 }
